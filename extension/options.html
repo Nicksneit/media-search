@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Media Searcher Settings</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&family=Open+Sans:wght@400;500&family=Roboto:wght@400;500&family=Rubik:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    :root { --bg: #121212; --card: #1e1e1e; --accent: #44BBA4; --text: #d1d1d1; --border: #333; }
+    body { font-family: 'Rubik', sans-serif; background: var(--bg); color: var(--text); padding: 30px; margin: 0; font-size: 16px; }
+    .container { max-width: 750px; margin: 0 auto; }
+    
+    .header-main { display: flex; flex-direction: column; align-items: center; margin-bottom: 30px; }
+    .logo-container { position: relative; width: 80px; height: 80px; margin-bottom: 10px; cursor: pointer; }
+    .logo-img { width: 100%; height: 100%; object-fit: cover; border-radius: 18px; border: 2px solid var(--border); transition: 0.3s ease; }
+    .reset-logo { font-size: 12px; color: #777; cursor: pointer; text-decoration: underline; margin-bottom: 15px; }
+    h1 { color: var(--accent); text-align: center; text-transform: uppercase; letter-spacing: 2px; margin: 0; }
+
+    /* Інструкція */
+    details { background: #181818; border: 1px solid var(--border); border-radius: 10px; margin-bottom: 20px; overflow: hidden; }
+    summary { padding: 15px; cursor: pointer; font-weight: 500; color: var(--accent); list-style: none; transition: background 0.2s; }
+    summary:hover { background: #252525; }
+    .inst-content { padding: 15px; font-size: 14px; line-height: 1.6; border-top: 1px solid var(--border); color: #bbb; }
+    .example-box { background: #222; padding: 12px; border-radius: 8px; margin: 10px 0; border-left: 4px solid var(--accent); }
+
+    .section { background: var(--card); padding: 25px; border-radius: 16px; border: 1px solid var(--border); margin-bottom: 25px; box-shadow: 0 10px 30px rgba(0,0,0,0.3); }
+    h2 { font-size: 18px; margin: 0 0 20px 0; color: #fff; border-bottom: 1px solid var(--border); padding-bottom: 10px; }
+
+    /* Картки */
+    .card { background: #232323; padding: 20px; margin-bottom: 15px; border-radius: 12px; border: 1px solid var(--border); }
+    .card-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; }
+    .card-header strong { color: var(--accent); font-size: 14px; text-transform: uppercase; }
+    .sort-btns { display: flex; gap: 6px; }
+    .btn-sort { background: #333; color: #fff; border: 1px solid #444; padding: 5px 10px; border-radius: 6px; cursor: pointer; }
+
+    input[type="text"], select { background: #262626; color: #fff; border: 1px solid var(--border); padding: 12px; margin: 8px 0; width: 100%; border-radius: 8px; box-sizing: border-box; font-family: inherit; }
+    
+    .setting-item { display:flex; justify-content:space-between; align-items:center; margin-bottom:20px; }
+    .font-size-control { display: flex; align-items: center; gap: 15px; }
+    .size-btn { width: 38px; height: 38px; background: #333; border: 1px solid #444; color: white; border-radius: 10px; cursor: pointer; font-size: 20px; display: flex; align-items: center; justify-content: center; }
+    #gen-font-size-val { font-size: 20px; font-weight: bold; color: var(--accent); min-width: 35px; text-align: center; }
+
+    .switch { position: relative; display: inline-block; width: 42px; height: 22px; }
+    .switch input { opacity: 0; width: 0; height: 0; }
+    .slider { position: absolute; cursor: pointer; top: 0; left: 0; right: 0; bottom: 0; background: #3d3d3d; transition: .3s; border-radius: 34px; }
+    .slider:before { position: absolute; content: ""; height: 16px; width: 16px; left: 3px; bottom: 3px; background: #fff; transition: .3s; border-radius: 50%; }
+    input:checked + .slider { background: var(--accent); }
+    input:checked + .slider:before { transform: translateX(20px); }
+
+    .btn { cursor: pointer; border: none; border-radius: 10px; padding: 14px 24px; font-weight: 500; transition: 0.3s; font-family: inherit; display: inline-flex; align-items: center; justify-content: center; gap: 8px; }
+    .add-btn { background: transparent; color: var(--accent); border: 2px solid var(--accent); width: 100%; margin-bottom: 25px; }
+    .save-btn { background: var(--accent); color: #121212; width: 100%; font-size: 16px; margin-top: 10px; }
+    .del-btn { background: #2d1a1a; color: #ff5c5c; border: 1px solid #4d2b2b; padding: 10px 16px; font-size: 13px; border-radius: 8px; }
+
+    .backup-row { display: flex; gap: 10px; margin-top: 15px; }
+    .btn-backup { flex: 1; background: #222; color: #aaa; border: 1px solid #444; padding: 10px; font-size: 13px; }
+
+    /* Дизайн вибору кольору */
+    .color-picker-wrapper { width: 45px; height: 45px; overflow: hidden; border-radius: 10px; border: 2px solid var(--border); position: relative; display: flex; align-items: center; justify-content: center; background: #000; }
+    .v-color, .v-text-color { position: absolute; width: 150%; height: 150%; cursor: pointer; border: none; padding: 0; margin: 0; background: none; }
+    
+    .row-flex { display: flex; gap: 12px; align-items: center; margin-top: 15px; flex-wrap: wrap; }
+    .color-block { display: flex; flex-direction: column; align-items: center; gap: 4px; }
+    .color-label { font-size: 11px; color: #888; text-transform: uppercase; }
+
+        </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header-main">
+      <div class="logo-container" id="logo-trigger">
+        <img src="icon.png" id="display-logo" class="logo-img">
+        <input type="file" id="logo-input" style="display:none" accept="image/*">
+      </div>
+      <div class="reset-logo" id="reset-logo">Скинути до стандартного</div>
+      <h1 id="h1">Media Search</h1>
+    </div>
+
+  <details style="background: #181818; border: 1px solid #333; border-radius: 10px; margin-bottom: 25px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.2);">
+      <summary id="instructions-summary" style="padding: 15px; cursor: pointer; font-weight: 500; color: #44BBA4; list-style: none; transition: background 0.2s; display: flex; align-items: center; gap: 10px;">
+        <span style="font-size: 18px;">📖</span> Повна інструкція та Приклади
+      </summary>
+      <div id="instructions-content" class="inst-content" style="padding: 15px; font-size: 14px; line-height: 1.6; border-top: 1px solid #333; color: #bbb;"></div>
+    </details>
+
+    <div class="section">
+      <h2 id="general-settings">Загальні налаштування</h2>
+      <div class="setting-item"><span id="interface-language">Мова інтерфейсу</span>
+        <select id="gen-language">
+          <option value="uk">Українська</option>
+          <option value="ru">Русский</option>
+          <option value="en">English</option>
+          <option value="fr">Français</option>
+          <option value="de">Deutsch</option>
+          <option value="es">Español</option>
+          <option value="it">Italiano</option>
+          <option value="pl">Polski</option>
+        </select>
+      </div>
+      <div class="setting-item"><span id="show-ms-label">Показувати кнопку MS</span><label class="switch"><input type="checkbox" id="gen-show-ms"><span class="slider"></span></label></div>
+<div class="setting-item">
+  <span id="show-gs-label">Пошук Google</span> <label class="switch">
+    <input type="checkbox" id="gen-show-gs">
+    <span class="slider"></span>
+  </label>
+</div>
+<div class="setting-item">
+  <span id="show-tr-label">Кнопка перекладу</span>
+  <label class="switch">
+    <input type="checkbox" id="gen-show-tr">
+    <span class="slider"></span>
+  </label>
+</div>
+<div class="setting-item">
+  <span id="show-cp-label">Кнопка копіювання</span>
+  <label class="switch">
+    <input type="checkbox" id="gen-show-cp">
+    <span class="slider"></span>
+  </label>
+</div>
+      <div class="setting-item"><span id="show-context-label">Контекстне меню</span><label class="switch"><input type="checkbox" id="gen-show-context"><span class="slider"></span></label></div>
+      <div class="setting-item"><span id="require-hold-all-label">Показувати кнопки при виділенні з зажатою клавішою на ВСІХ сайтах</span><label class="switch"><input type="checkbox" id="gen-require-hold-all"><span class="slider"></span></label></div>
+      <div class="setting-item"><span id="require-hold-list-label">Показувати кнопки при виділенні з зажатою клавішою тільки на сайтах зі списку</span><label class="switch"><input type="checkbox" id="gen-require-hold-list"><span class="slider"></span></label></div>
+
+      <div id="hold-key-container" style="display:none; margin: 25px 0 35px 0; padding:22px; background:#1a1a1a; border-radius:10px; border:1px solid #333;">
+        
+        <div class="setting-item">
+          <span id="hold-key-label">Клавіша-модифікатор</span>
+          <button id="capture-key-btn" class="btn" style="padding:8px 18px; font-size:14px;">Натисніть для вибору клавіші</button>
+          <span id="current-hold-key" style="margin-left:18px; color:#44BBA4; font-weight:bold;">Не встановлено</span>
+        </div>
+
+        <div style="margin-top:20px;">
+          <span id="hold-sites-label" style="display:block; margin-bottom:8px;">Список сайтів (один домен на рядок)</span>
+          <textarea id="hold-key-sites" rows="5" 
+            style="width:100%; 
+                   box-sizing:border-box; 
+                   background:#262626; 
+                   color:#fff; 
+                   border:1px solid #444; 
+                   border-radius:8px; 
+                   padding:12px 14px; 
+                   resize:vertical; 
+                   font-family:inherit; 
+                   font-size:14px; 
+                   line-height:1.5;"
+            placeholder="youtube.com&#10;netflix.com&#10;letterboxd.com"></textarea>
+        </div>
+      </div>      
+      <div style="margin-bottom:20px;">
+        <span id="font-selection-label">Вибір шрифту</span>
+        <select id="gen-font">
+          <option value="'Rubik', sans-serif">Rubik</option>
+          <option value="'Montserrat', sans-serif">Montserrat</option>
+          <option value="'Roboto', sans-serif">Roboto</option>
+          <option value="'Open Sans', sans-serif">Open Sans</option>
+        </select>
+      </div>
+
+      <div class="setting-item"><span id="custom-font-label">Власний шрифт</span><label class="switch"><input type="checkbox" id="gen-use-custom-font"><span class="slider"></span></label></div>
+      <input type="text" id="gen-custom-font-name" placeholder="Назва з Google Fonts">
+
+      <div style="margin-top:20px; display: flex; align-items: center; justify-content: space-between;">
+        <span id="button-font-size-label">Розмір шрифту кнопок (px)</span>
+        <div class="font-size-control">
+          <button class="size-btn" id="font-dec">−</button>
+          <span id="gen-font-size-val">11</span>
+          <button class="size-btn" id="font-inc">+</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2 id="search-buttons">Кнопки пошуку</h2>
+      <button id="add-btn" class="btn add-btn">+ ДОДАТИ НОВУ КНОПКУ</button>
+      <div id="buttons-list"></div>
+      <button id="save-btn" class="btn save-btn">ЗБЕРЕГТИ НАЛАШТУВАННЯ</button>
+      <div class="backup-row">
+        <button id="export-btn" class="btn btn-backup">Експорт (Backup)</button>
+        <button id="import-btn" class="btn btn-backup">Імпорт (Restore)</button>
+        <input type="file" id="import-file" style="display:none" accept=".json">
+      </div>
+    </div>
+  </div>
+  <script src="shared.js"></script>
+  <script src="options.js"></script>
+</body>
+</html>
