@@ -8,6 +8,16 @@
 
 Select a movie, series or game title on any web page and search it on your favorite sites in one click.
 
+![Emoji Wheel radial menu](screenshots/promo-tile-440x280.png)
+
+![Expanded category](screenshots/1-1.png)
+
+![Expanded category](screenshots/1-2.png)
+
+![Expanded category](screenshots/1-3.png)
+
+![Expanded category](screenshots/1-4.png)
+
 ### How it works
 
 1. Select a title on any page. A small panel appears next to the selection.
