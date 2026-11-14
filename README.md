@@ -2,9 +2,7 @@
   <img src="screenshots/promo-marquee.png" alt="Media Search" width="100%">
 </p>
 
-<p align="center">
-  <b>English</b> · <a href="README.ru.md">Русский</a> · <a href="README.uk.md">Українська</a>
-</p>
+**English** · [Русский](#русский) · [Українська](#українська)
 
 # Media Search
 
@@ -103,9 +101,7 @@ See [CHANGELOG.md](CHANGELOG.md).
   <img src="screenshots/promo-marquee.png" alt="Media Search" width="100%">
 </p>
 
-<p align="center">
-  <a href="README.md">English</a> · <b>Русский</b> · <a href="README.uk.md">Українська</a>
-</p>
+**English** · [Русский](#русский) · [Українська](#українська)
 
 # Media Search
 
@@ -204,9 +200,7 @@ See [CHANGELOG.md](CHANGELOG.md).
   <img src="screenshots/promo-marquee.png" alt="Media Search" width="100%">
 </p>
 
-<p align="center">
-  <a href="README.md">English</a> · <a href="README.ru.md">Русский</a> · <b>Українська</b>
-</p>
+**English** · [Русский](#русский) · [Українська](#українська)
 
 # Media Search
 
