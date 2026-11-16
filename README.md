@@ -54,7 +54,7 @@ Select a title on any page and press ⚡: your own search buttons appear right n
 
 ## Installation
 
-**Chrome Web Store** — search for "Media Search".
+**Chrome Web Store:** [Media Search](https://chromewebstore.google.com/detail/aohdkmnbfpakkigbdlaobohflagmmgpa?utm_source=item-share-cb)
 
 **Manually (developer mode)**
 1. Download the latest release and unpack it.
@@ -153,7 +153,7 @@ See [CHANGELOG.md](CHANGELOG.md).
 
 ## Установка
 
-**Chrome Web Store** — найдите «Media Search».
+**Chrome Web Store;** [Media Search](https://chromewebstore.google.com/detail/aohdkmnbfpakkigbdlaobohflagmmgpa?utm_source=item-share-cb)
 
 **Вручную (режим разработчика)**
 1. Скачайте последний релиз и распакуйте его.
@@ -252,7 +252,7 @@ See [CHANGELOG.md](CHANGELOG.md).
 
 ## Встановлення
 
-**Chrome Web Store** — знайдіть «Media Search».
+**Chrome Web Store:** [Media Search](https://chromewebstore.google.com/detail/aohdkmnbfpakkigbdlaobohflagmmgpa?utm_source=item-share-cb)
 
 **Вручну (режим розробника)**
 1. Завантажте останній реліз і розпакуйте його.
