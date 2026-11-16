@@ -3,6 +3,10 @@
 </p>
 
 <p align="center">
+  <a href="CHROME_WEB_STORE_URL"><img src="https://img.shields.io/badge/Chrome%20Web%20Store-Install-4285F4?logo=googlechrome&logoColor=white&style=for-the-badge" alt="Install from Chrome Web Store"></a>
+</p>
+
+<p align="center">
   <a href="README.md">English</a> · <b>Русский</b> · <a href="README.uk.md">Українська</a>
 </p>
 
