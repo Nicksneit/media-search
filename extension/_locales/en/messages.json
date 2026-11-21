@@ -1,0 +1,11 @@
+{
+  "store_check": {
+    "message": "Full Instructions and Examples"
+  },
+  "extDescription": {
+    "message": "Search selected movies, series & games on your favorite sites in one click: custom buttons, hotkey, translation, copy, history."
+  },
+  "cmdSearch": {
+    "message": "Search the selected text (open search buttons)"
+  }
+}

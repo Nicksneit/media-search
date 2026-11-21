@@ -1,0 +1,11 @@
+{
+  "store_check": {
+    "message": "Instructions Complètes et Exemples"
+  },
+  "extDescription": {
+    "message": "Recherchez films, séries et jeux sélectionnés sur vos sites favoris en un clic : boutons perso, raccourci, traduction, copie."
+  },
+  "cmdSearch": {
+    "message": "Rechercher le texte sélectionné (ouvrir les boutons)"
+  }
+}
